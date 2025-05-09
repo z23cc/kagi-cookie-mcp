@@ -38,27 +38,27 @@ High-quality text translation tool:
 The system automatically selects the most appropriate AI model based on the task type:
 
 ### Conversation Model Selection
-- **General Knowledge**: Optimized for general questions (claude-3-sonnet)
-- **Advanced Reasoning**: For complex reasoning problems (claude-3-7-sonnet)
-- **Balanced Performance**: Provides balance between speed and quality (claude-3-5-sonnet)
+- **General Knowledge**: Optimized for general questions (claude-3-7-sonnet)
+- **Advanced Reasoning**: For complex reasoning problems (o3)
+- **Balanced Performance**: Provides balance between speed and quality (claude-3-7-sonnet)
 - **Creative Content**: For creative content generation (gemini-2-5-pro)
-- **Technical Analysis**: For technical analysis questions (gpt-4-1)
-- **Architecture Design**: For system architecture discussions (gemini-2-5-pro)
+- **Technical Analysis**: For technical analysis questions (o3)
+- **Architecture Design**: For system architecture discussions (o3)
 - **Quick Response**: For quick factual questions (o4-mini)
-- **Code Generation**: For programming and code-related questions (claude-3-5-sonnet)
-- **Scientific Research**: For scientific research questions (deepseek)
+- **Code Generation**: For programming and code-related questions (gemini-2-5-pro)
+- **Scientific Research**: For scientific research questions (gemini-2-5-pro)
 
 ### Summary Model Selection
-- **Standard Summary**: Provides balanced and detailed content summary (claude-3-sonnet)
-- **Comprehensive Analysis**: Delivers in-depth analysis and insights (claude-3-7-sonnet)
+- **Standard Summary**: Provides balanced and detailed content summary (claude-3-7-sonnet)
+- **Comprehensive Analysis**: Delivers in-depth analysis and insights (gemini-2-5-pro)
 - **Efficient Overview**: Quickly provides a concise overview of key points (o4-mini)
-- **Technical Breakdown**: Analyzes technical content in detail (gpt-4-1)
-- **Research Summary**: Professionally summarizes academic or scientific content (deepseek)
+- **Technical Breakdown**: Analyzes technical content in detail (o3)
+- **Research Summary**: Professionally summarizes academic or scientific content (gemini-2-5-pro)
 
 ### Translation Model Selection
-- **Standard Translation**: Provides high-quality translation for general text (claude-3-sonnet)
-- **High Accuracy**: Delivers precise translation for formal documents (claude-3-7-sonnet)
-- **Technical Translation**: Accurate translation of professional or technical content (gpt-4-1)
+- **Standard Translation**: Provides high-quality translation for general text (claude-3-7-sonnet)
+- **High Accuracy**: Delivers precise translation for formal documents (gemini-2-5-pro)
+- **Technical Translation**: Accurate translation of professional or technical content (o3)
 - **Quick Translation**: Fast translation for simple content (o4-mini)
 - **Creative Translation**: Preserves style, tone, and creative elements of the original text (gemini-2-5-pro)
 

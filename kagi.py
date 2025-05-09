@@ -344,28 +344,28 @@ def kagi_chat(
     
     # Model descriptions for reference
     model_descriptions = {
-        "General Knowledge": "Optimized for general questions and information retrieval. Provides comprehensive and accurate answers with balanced context. Best for everyday queries, factual information, and broad topics. (claude-3-sonnet)",
-        "Advanced Reasoning": "Specialized in complex reasoning and multi-step analysis. Delivers detailed reasoning processes and handles nuanced problems. Ideal for decision-making, logical analysis, and complex problem-solving. (claude-3-7-sonnet)",
-        "Balanced Performance": "Offers an excellent balance between speed and quality. Provides consistent results with good efficiency. Perfect for daily use when you need reliable answers without maximum depth. (claude-3-5-sonnet)",
-        "Creative Content": "Excels at creative writing and diverse content generation. Produces unique expressions and varied outputs. Best for storytelling, marketing copy, and content that requires originality. (gemini-2-5-pro)",
-        "Technical Analysis": "Focused on precise technical understanding and explanation. Delivers accurate technical insights and complex concept clarification. Ideal for technical documentation, error analysis, and specialized knowledge. (gpt-4-1)",
-        "Architecture Design": "Specialized in software architecture and system design. Excels at analyzing entire codebases and providing structural insights. Perfect for system planning, architecture reviews, and technical design. (gemini-2-5-pro)",
-        "Quick Response": "Optimized for fast, efficient responses to simple questions. Delivers concise answers with minimal latency. Best for quick facts, simple definitions, and time-sensitive queries. (o4-mini)",
-        "Code Generation": "Focused on programming and software development. Provides consistent, well-structured code with minimal prompting. Ideal for coding assistance, debugging, and software implementation. (claude-3-5-sonnet)",
-        "Scientific Research": "Specialized in academic research and scientific analysis. Delivers in-depth exploration of specialized domains. Perfect for research papers, scientific literature review, and academic writing. (deepseek)"
+        "General Knowledge": "Leverages Claude 3.7 Sonnet for its strong conversational stability, instruction following, and formatted output. Ideal for everyday queries and factual information requiring clear, structured answers.",
+        "Advanced Reasoning": "Utilizes o3 for its superior capabilities in reasoning, logical analysis, and handling nuanced problems. Best for decision-making and complex problem-solving requiring deep thought.",
+        "Balanced Performance": "Employs Claude 3.7 Sonnet to offer a good balance of reliable output and conversational quality. Suitable for general tasks where consistent and well-structured responses are needed.",
+        "Creative Content": "Powered by Gemini 2.5 Pro, excelling at creative writing, diverse content generation, and tasks requiring originality and long-context understanding.",
+        "Technical Analysis": "Uses o3 for precise technical understanding, explanations, and problem-solving. Ideal for technical documentation, error analysis, and specialized knowledge requiring logical breakdown.",
+        "Architecture Design": "Assigns o3 for its strengths in system architecture analysis and technical design. Perfect for system planning, architecture reviews, and in-depth technical explanations of structures.",
+        "Quick Response": "Relies on o4-mini for fast, efficient responses to simple questions. Delivers concise answers with minimal latency, best for quick facts and time-sensitive queries.",
+        "Code Generation": "Features Gemini 2.5 Pro for robust code generation, debugging, and software implementation tasks, leveraging its strength in handling complex programming challenges.",
+        "Scientific Research": "Uses Gemini 2.5 Pro for in-depth exploration of specialized domains and complex research tasks, benefiting from its strong analytical and long-context processing capabilities."
     }
     
-    # Map model_selection to actual model based on their strengths (based on latest research)
+    # Map model_selection to actual model based on their strengths (based on user's latest plan)
     model_mapping = {
-        "General Knowledge": "claude-3-sonnet",      # Excellent general capabilities and balanced performance
-        "Advanced Reasoning": "claude-3-7-sonnet",   # Superior reasoning abilities, ideal for complex analysis
-        "Balanced Performance": "claude-3-5-sonnet", # Good balance of speed and quality
-        "Creative Content": "gemini-2-5-pro",        # Creative generation and diverse outputs
-        "Technical Analysis": "gpt-4-1",             # Precise technical understanding and explanation
-        "Architecture Design": "gemini-2-5-pro",     # Excels at analyzing entire codebases and system design
-        "Quick Response": "o4-mini",                 # More efficient responses than o3-mini
-        "Code Generation": "claude-3-5-sonnet",      # Excellent at programming tasks with consistent results
-        "Scientific Research": "deepseek"            # Specialized academic and research capabilities
+        "General Knowledge": "claude-3-7-sonnet",  # Strong instruction following and structured output
+        "Advanced Reasoning": "o3",                   # Preferred for reasoning and logical analysis
+        "Balanced Performance": "claude-3-7-sonnet",# Good all-around qualities from the new list
+        "Creative Content": "gemini-2-5-pro",        # Best for creative tasks
+        "Technical Analysis": "o3",                # Preferred for technical explanation and analysis
+        "Architecture Design": "o3",                # Preferred for system architecture
+        "Quick Response": "o4-mini",                 # Best for speed and lightweight tasks
+        "Code Generation": "gemini-2-5-pro",      # Strongest for code and complex tasks
+        "Scientific Research": "gemini-2-5-pro"       # Strongest for complex tasks, suitable for research
     }
     
     # Get the actual model from the mapping
@@ -428,20 +428,20 @@ def kagi_summarize(
     
     # Summary descriptions for reference
     summary_descriptions = {
-        "Standard Summary": "Provides a balanced and detailed content summary. Extracts key information while maintaining context. Ideal for general articles, blog posts, and web pages. (claude-3-sonnet)",
-        "Comprehensive Analysis": "Delivers in-depth analysis and insights. Identifies patterns, implications, and connections within complex content. Perfect for long documents, research papers, and detailed reports. (claude-3-7-sonnet)",
-        "Efficient Overview": "Quickly provides a concise overview of key points. Focuses on essential information for rapid understanding. Best for news articles, short content, and when time is limited. (o4-mini)",
-        "Technical Breakdown": "Analyzes technical content in detail. Extracts specialized information, implementation details, and technical specifications. Ideal for documentation, code repositories, and technical guides. (gpt-4-1)",
-        "Research Summary": "Professionally summarizes academic or scientific content. Extracts research methodologies, findings, and contributions. Perfect for academic papers, scientific literature, and specialized research. (deepseek)"
+        "Standard Summary": "Utilizes Claude 3.7 Sonnet for balanced and detailed content summaries, leveraging its strong instruction following and structured output capabilities. Ideal for general articles and web pages.",
+        "Comprehensive Analysis": "Powered by Gemini 2.5 Pro for in-depth analysis and insights from complex and long documents, utilizing its superior contextual understanding and ability to handle extensive information.",
+        "Efficient Overview": "Relies on o4-mini to quickly provide a concise overview of key points, focusing on essential information for rapid understanding. Best for short content when time is limited.",
+        "Technical Breakdown": "Assigns o3 for detailed analysis of technical content, extracting specialized information and implementation details by leveraging its strengths in reasoning and technical explanation.",
+        "Research Summary": "Employs Gemini 2.5 Pro for professionally summarizing academic or scientific content, extracting methodologies, findings, and contributions, benefiting from its comprehensive analytical power."
     }
     
-    # Map summary_type to actual model based on summarization strengths
+    # Map summary_type to actual model based on summarization strengths (user's latest plan)
     model_mapping = {
-        "Standard Summary": "claude-3-sonnet",        # Balanced summarization capabilities for general content
-        "Comprehensive Analysis": "claude-3-7-sonnet", # Deep analysis and insight capabilities
-        "Efficient Overview": "o4-mini",              # Fast and efficient overview, suitable for simple content
-        "Technical Breakdown": "gpt-4-1",             # Precise technical content analysis
-        "Research Summary": "deepseek"                # Professional academic and research content summarization
+        "Standard Summary": "claude-3-7-sonnet",  # Strong instruction following and structured output
+        "Comprehensive Analysis": "gemini-2-5-pro", # Comprehensive strength for complex tasks
+        "Efficient Overview": "o4-mini",            # Best for speed and lightweight tasks
+        "Technical Breakdown": "o3",               # Preferred for technical explanation and reasoning
+        "Research Summary": "gemini-2-5-pro"      # Comprehensive strength for research content
     }
     
     # Get the actual model from the mapping
@@ -515,20 +515,20 @@ def kagi_translate(
     
     # Translation descriptions for reference
     translation_descriptions = {
-        "Standard Translation": "Provides high-quality translation for general text while preserving original meaning. Balances accuracy and natural flow. Ideal for everyday content, correspondence, and general documents. (claude-3-sonnet)",
-        "High Accuracy": "Delivers precise translation with nuanced understanding of context and subtle meanings. Maintains formal tone and structure. Perfect for official documents, legal texts, and content where precision is critical. (claude-3-7-sonnet)",
-        "Technical Translation": "Specializes in accurate translation of professional or technical content. Preserves specialized terminology and technical concepts. Best for technical documentation, scientific papers, and specialized fields. (gpt-4-1)",
-        "Quick Translation": "Offers fast translation for simple content with good efficiency. Focuses on core meaning rather than nuance. Ideal for casual conversations, short texts, and when speed is essential. (o4-mini)",
-        "Creative Translation": "Preserves style, tone, and creative elements of the original text. Adapts cultural references and maintains the author's voice. Perfect for literary works, marketing content, and creative writing. (gemini-2-5-pro)"
+        "Standard Translation": "Leverages Claude 3.7 Sonnet for high-quality translation of general text, preserving meaning with good conversational flow and structural integrity. Ideal for everyday content.",
+        "High Accuracy": "Powered by Gemini 2.5 Pro for precise translation with nuanced understanding of context and subtle meanings, especially for complex or lengthy texts where utmost accuracy is critical.",
+        "Technical Translation": "Assigns o3 for accurate translation of professional or technical content, preserving specialized terminology and technical concepts through its strong analytical and explanatory capabilities.",
+        "Quick Translation": "Relies on o4-mini for fast translation of simple content with good efficiency. Focuses on core meaning when speed is essential.",
+        "Creative Translation": "Employs Gemini 2.5 Pro to preserve style, tone, and creative elements of the original text, adapting cultural references and maintaining the author's voice for literary or marketing content."
     }
     
-    # Map translation_quality to actual model based on translation strengths
+    # Map translation_quality to actual model based on translation strengths (user's latest plan)
     model_mapping = {
-        "Standard Translation": "claude-3-sonnet",    # Good general translation capabilities
-        "High Accuracy": "claude-3-7-sonnet",         # Most precise translation, suitable for important documents
-        "Technical Translation": "gpt-4-1",           # Accurate translation of specialized terminology and technical content
-        "Quick Translation": "o4-mini",               # More efficient quick translation than o3-mini
-        "Creative Translation": "gemini-2-5-pro"      # Creative translation that preserves style and tone
+        "Standard Translation": "claude-3-7-sonnet",# Strong instruction following and structure
+        "High Accuracy": "gemini-2-5-pro",         # Comprehensive strength for highest accuracy
+        "Technical Translation": "o3",              # Preferred for technical explanations
+        "Quick Translation": "o4-mini",               # Best for speed
+        "Creative Translation": "gemini-2-5-pro"      # Best for creative content
     }
     
     # Get the actual model from the mapping
